@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+:root {
+  --bg-color: #081b29;
+  --second---bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+}
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.logo {
+  font-size: 3.2rem;
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: default;
+  opacity: 0;
+  animation: slide .5s ease forwards;
+}
+
+.navbar a {
+  font-size: 1.9rem;
+  color: var(--text-color);
+  font-weight: 500;
+  margin-left: 3.5rem;
+  transition: 0.3s;
+  opacity: 0;
+  animation: slidetop 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+
+}
+.navbar a:hover,
+.navbar a:active {
+  color: var(--main-color);
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  height: 100vh;
+  background: url(nilesh.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+.home-content {
+  min-width: 600px;
+}
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .6s;
+}
+.home-content h3 span {
+   color: rgb(153, 255, 0);
+  }
+  .home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slidetop 1s ease forwards;
+     animation-delay: .7s;
+   
+   }
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.home-content p {
+  font-size: 20px;
+  animation-delay: 1s;
+  animation: slideLeft 1s ease forwards;
+}
+.home-sci a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 22px;
+    color: var(--text-color);
+    text-decoration: none;
+    animation: slideBottom 1s ease forwards;
+    transition: .5s ease;
+    opacity: 0;
+    animation-delay: calc(.2s * var(--i));
+    margin: 30px 15px 30px 0;
+    
+  }
+  .home-sci a:hover{
+   background: var(--text-color);
+   color:rgb(0, 0, 0);
+   box-shadow: 0px 0px 20px  rgb(255, 255, 255) ;
+  }
+  .btn-box{
+    display: inline-flex;
+    padding: 12px 28px;
+    background: white;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 40px;
+    opacity: 0;
+    animation-delay: 2s;
+    animation: slidetop 1s ease forwards;
+    box-shadow: 0 0 5px white;
+
+  }
+  .btn-box:hover{
+    box-shadow: 0px 0px 20px  rgb(255, 255, 255) ;
+  }
+  @keyframes  slide  {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+  }
+  @keyframes  slideRight  {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+  }
+  @keyframes  slideLeft  {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+  }
+  @keyframes  slidetop  {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+  }
+  @keyframes  slideBottom{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+  }
+  @media screen and ((max-width: 728px)) {
+
+    .logo{
+      font-size: 1.8rem;
+    }
+    .navbar a{
+      font-size: 1.5rem;
+      display: flex;
+    }
+    .home{
+      width:fit-content;
+    }
+    .home-content h3 {
+      font-size: 25px;
+    }
+    .home-content h1 {
+      font-size: 36px;
+    }
+    .home-content p {
+      font-size: 16px;
+    }
+    .home-sci a{
+      font-size: 22px;
+      width: 30px;
+      height: 30px;
+    }
+    .btn-box{
+      padding: 8px 20px;
+      font-size: 8px;
+    }
+  }
+  @media screen and (max-width: 426px) {
+    .logo{
+      font-size: 1.1rem;
+    }
+    .navbar a{
+      font-size: .9rem;
+    }
+    .home{
+      width: 100%;
+    }
+    .home img{
+      width: 50%;
+      background-size: cover;
+    }
+    .home-content h3 {
+      font-size: 15px;
+    }
+    .home-content h1 {
+      font-size: 18px;
+    }
+    .home-content p {
+      font-size: 12px;
+    }
+    .home-sci a{
+      font-size: 15px;
+      width: 20px;
+      height: 20px;
+    }
+    .btn-box{
+      padding: 8px 20px;
+      font-size: 8px;
+    }
+  }
